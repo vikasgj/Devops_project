@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 from datetime import timedelta
 
@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'Vikasgj@123',
-        'HOST': 'db',   # very important (service name)
+        'HOST': os.getenv('DB_HOST', 'db'),   # very important (service name)
         'PORT': '5432',
     }
 }
